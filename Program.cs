@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Teste commit Aula03
+
+using System;
 
 namespace Aula01
 {
@@ -26,7 +28,7 @@ namespace Aula01
             Console.WriteLine("\nDigite a data:");
             DateTime data = DateTime.Parse(Console.ReadLine());
 
-            if(data.DayOfWeek == DayOfWeek.Saturday || data.DayOfWeek == DayOfWeek.Sunday)
+            if (data.DayOfWeek == DayOfWeek.Saturday || data.DayOfWeek == DayOfWeek.Sunday)
             {
                 Console.WriteLine("Final de semana! Hoje não tem aula! Revisarei exercícios.");
             }
