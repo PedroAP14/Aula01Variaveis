@@ -1,6 +1,7 @@
 ﻿//Teste commit Aula03
 
 using System;
+using System.Runtime.InteropServices;
 
 namespace Aula01
 {
@@ -11,16 +12,29 @@ namespace Aula01
             Console.WriteLine("\nQual exemplo você quer vizualizar?");
             Console.WriteLine("\n1 - Concatenar palavras\n2 - Calcular Média\n3 - Calcular Tabuada\n4 - Verificar Aula Etec");
             int escolha = int.Parse(Console.ReadLine());
-            if (escolha == 1)
-                ConcatenarPalavras();
-            else if (escolha == 2)
-                CalcularMedia();
-            else if (escolha == 3)
-                CalcularTabuada();
-            else if (escolha == 4)
-                VerificarAulaEtec();
-            else
-                Console.WriteLine("Insira um exemplo válido");
+
+            switch (escolha)
+            {
+                case 1:
+                    ConcatenarPalavras();
+                    break;
+
+                case 2:
+                    CalcularMedia();
+                    break;
+
+                case 3:
+                    CalcularTabuada();
+                    break;
+
+                case 4:
+                    VerificarAulaEtec();
+                    break;
+
+                default:
+                    Console.WriteLine("Insira um exemplo válido");
+                    break;
+            }
         }
 
         public static void VerificarAulaEtec()
