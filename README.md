@@ -38,7 +38,7 @@ Use `#` para definir o nível do título:
 Para adicionar um GIF, utilize a seguinte sintaxe:
 `![Descrição do GIF](URL_DO_GIF)`
 
-![Exemplo de GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZ29qZzV3ZzRzM3g4eHh3eHh3eHh3eHh3eHh3eHh3eHh3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxHOGTdzJC/giphy.gif)
+![Exemplo de GIF](https://tenor.com/pt-BR/view/spinnig-cat-gif-1175703927588788964.gif)
 
 ### Exemplo de Desenho (ASCII Art)
 Você também pode criar desenhos simples usando texto (ASCII):
