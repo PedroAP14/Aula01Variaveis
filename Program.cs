@@ -1,7 +1,6 @@
 ﻿//Teste commit Aula03
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace Aula01
 {
@@ -10,7 +9,7 @@ namespace Aula01
         static void Main(string[] args)
         {
             Console.WriteLine("\nQual exemplo você quer vizualizar?");
-            Console.WriteLine("\n1 - Concatenar palavras\n2 - Calcular Média\n3 - Calcular Tabuada\n4 - Verificar Aula Etec");
+            Console.WriteLine("\n1 - Concatenar palavras\n2 - Calcular Média\n3 - Calcular Tabuada\n4 - Verificar Aula Etec\n5 - Detalhar Data\n6 - Desconto do INSS");
             int escolha = int.Parse(Console.ReadLine());
 
             switch (escolha)
@@ -31,9 +30,68 @@ namespace Aula01
                     VerificarAulaEtec();
                     break;
 
+                case 5:
+                    DetalharData();
+                    break;
+
+                case 6:
+                    CalcularDescontoINSS();
+                    break;
+
                 default:
                     Console.WriteLine("Insira um exemplo válido");
                     break;
+            }
+        }
+
+        public static void CalcularDescontoINSS()
+        {
+            Console.WriteLine("\nDigite seu salário:");
+            float salario = float.Parse(Console.ReadLine());
+            float desconto;
+            float salariofinal;
+
+            if (salario <= 1621)
+            {
+                desconto = salario * 0.075f;
+            }
+
+            else if (salario > 1621 && salario <= 2902.84f)
+            {
+                desconto = 1621 * 0.075f + (salario - 1621) * 0.09f;
+            }
+
+            else if (salario > 2902.84f && salario <= 4354.27f)
+            {
+                desconto = 1621 * 0.075f + (2902.84f - 1621) * 0.09f + (salario - 2902.84f) * 0.12f;
+            }
+
+            else if (salario > 4354.27f && salario <= 8475.55f)
+            {
+                desconto = 1621 * 0.075f + (2902.84f - 1621) * 0.09f + (4354.27f - 2902.84f) * 0.12f + (salario - 4354.27f) * 0.14f;
+            }
+
+            else
+            {
+                desconto = 1621 * 0.075f + (2902.84f - 1621) * 0.09f + (4354.27f - 2902.84f) * 0.12f + (8475.55f - 4354.27f) * 0.14f;
+            }
+
+            salariofinal = salario - desconto;
+            Console.WriteLine($"\nO desconto é de {desconto:c2} portanto o seu salário vai ser {salariofinal:c2}");
+        }
+
+        public static void DetalharData()
+        {
+            Console.WriteLine("\nDigite uma data:");
+            DateTime datahoje = DateTime.Parse(Console.ReadLine());
+
+            if (datahoje.DayOfWeek == DayOfWeek.Sunday)
+            {
+                Console.WriteLine("\nEsse dia é {0:dddd} do mês {0:MMMM} e são {1:HH:mm}", datahoje, DateTime.Now);
+            }
+            else
+            {
+                Console.WriteLine("\nEsse dia é {0:dddd} do mês {0:MMMM}", datahoje);
             }
         }
 
